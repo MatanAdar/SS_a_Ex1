@@ -1,28 +1,6 @@
 #include "NumClass.h"
 #include <math.h>
 
-int isPalindrome(int x)
-{
-    int OriginalNumber=x;
-    int LastNum=0;
-    int FirstNum=0;
-
-    while(OriginalNumber>0)
-    {
-        LastNum=OriginalNumber%10;
-        FirstNum=OriginalNumber/(pow(10,NumberLength(OriginalNumber)-1));
-
-        if(LastNum!=FirstNum){
-            return 0;
-        }
-
-        OriginalNumber=OriginalNumber%(int)(pow(10,NumberLength(OriginalNumber)-1));
-        OriginalNumber=OriginalNumber/10;
-        
-    }
-    return 1;
-}
-
 int NumberLength(int x)
 {
     int length=0;
@@ -32,6 +10,21 @@ int NumberLength(int x)
         x=x/10;
     }
     return length;
+}
+
+int isPalindrome(int OriginalNumber)
+{
+    int changeOriginalNumber=OriginalNumber;
+    int reverseOriginalNumber=0;
+   while(NumberLength(changeOriginalNumber)>0)
+   {
+        reverseOriginalNumber=reverseOriginalNumber*10;
+        reverseOriginalNumber+=changeOriginalNumber%10;
+        changeOriginalNumber=changeOriginalNumber/10;
+   }
+
+   return (reverseOriginalNumber==OriginalNumber);
+  
 }
 
 

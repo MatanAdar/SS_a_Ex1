@@ -1,8 +1,6 @@
 #include "NumClass.h"
 #include <math.h>
 
-int isPalindromeReverse(int, int);
-
 int NumberLength(int x)
 {
     int length=0;
@@ -16,40 +14,34 @@ int NumberLength(int x)
 
 int isPalindromeReverse(int num , int ReverseNum)
 {
-    if(num==0){
-        return 0;
+    if(NumberLength(num)==0){
+        return ReverseNum;
     }
-    return ReverseNum*10 + num%10 +isPalindromeReverse(num/10, ReverseNum);
+    ReverseNum=ReverseNum*10+num%10;
+    return isPalindromeReverse(num/10, ReverseNum);
 }
 
 int isPalindrome(int OriginalNumber)
 {   
-    int reveseNum=0;
-    int ReverseOriginalNumber=isPalindromeReverse(OriginalNumber,reveseNum);
+    int ReverseOriginalNumber=isPalindromeReverse(OriginalNumber,0);
 
-    if(ReverseOriginalNumber==OriginalNumber)
-    {
-        return 1;
-    }
-    else{
-        return 0;
-    }
+    return(ReverseOriginalNumber==OriginalNumber);
+   
 }
 
-int isArmstongLength(int num)
+int isArmstongLength(int num, int length)
 {   
-    int length=NumberLength(num);
     int changeOriginalNumber=num;
     if(changeOriginalNumber==0){
         return 0;
     }
-    return pow(changeOriginalNumber%10,length)+isArmstongLength(changeOriginalNumber/10);
+    return pow(changeOriginalNumber%10,length)+isArmstongLength(changeOriginalNumber/10,length);
 }
 
 
 int isArmstrong(int OriginalNumber)
 {
-    int sum=isArmstongLength(OriginalNumber);
+    int sum=isArmstongLength(OriginalNumber,NumberLength(OriginalNumber));
 
     if(sum==OriginalNumber)
     {

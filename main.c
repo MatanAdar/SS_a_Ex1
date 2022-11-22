@@ -9,35 +9,11 @@ int main()
 
     scanf("%d" "%d",&FirstNum, &SecondNum);
 
-    printf("The prime numbers are:");
-
-    for(int i=FirstNum; i<=SecondNum; i++)
-    {
-        if(isPrime(i))
-        {
-            printf(" %d" ,i);
-        }
-    }
-
-    printf("\n");
-
     printf("The armstong numbers are:");
 
     for(int i=FirstNum; i<=SecondNum; i++)
     {
         if(isArmstrong(i))
-        {
-            printf(" %d" ,i);
-        }
-    }
-
-    printf("\n");
-
-    printf("The Strong numbers are:");
-
-    for(int i=FirstNum; i<=SecondNum; i++)
-    {
-        if(isStrong(i))
         {
             printf(" %d" ,i);
         }
@@ -57,6 +33,31 @@ int main()
 
     printf("\n");
 
+    printf("The prime numbers are:");
+
+    for(int i=FirstNum; i<=SecondNum; i++)
+    {
+        if(isPrime(i))
+        {
+            printf(" %d" ,i);
+        }
+    }
+
+    printf("\n");
+
+    printf("The Strong numbers are:");
+
+    for(int i=FirstNum; i<=SecondNum; i++)
+    {
+        if(isStrong(i))
+        {
+            printf(" %d" ,i);
+        }
+    }
+
+    printf("\n");
+
+   
     return 0;
 
 }
