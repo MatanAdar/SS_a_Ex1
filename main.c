@@ -9,7 +9,7 @@ int main()
 
     scanf("%d" "%d",&FirstNum, &SecondNum);
 
-    printf("The armstong numbers are:");
+    printf("The Armstrong numbers are:");
 
     for(int i=FirstNum; i<=SecondNum; i++)
     {
@@ -21,7 +21,7 @@ int main()
 
     printf("\n");
 
-    printf("The palindromes are:");
+    printf("The Palindromes are:");
 
     for(int i=FirstNum; i<=SecondNum; i++)
     {
@@ -33,7 +33,7 @@ int main()
 
     printf("\n");
 
-    printf("The prime numbers are:");
+    printf("The Prime numbers are:");
 
     for(int i=FirstNum; i<=SecondNum; i++)
     {
